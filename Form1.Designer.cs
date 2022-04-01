@@ -87,7 +87,7 @@ namespace Ejercicio_1_Guía_7
             this.txtConcepto.Location = new System.Drawing.Point(27, 67);
             this.txtConcepto.Multiline = true;
             this.txtConcepto.Name = "txtConcepto";
-            this.txtConcepto.Size = new System.Drawing.Size(329, 75);
+            this.txtConcepto.Size = new System.Drawing.Size(345, 75);
             this.txtConcepto.TabIndex = 1;
             // 
             // label2
