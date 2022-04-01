@@ -24,7 +24,7 @@ namespace Ejercicio_1_Guía_7
         {
             try
             {
-                if (txtConcepto.Text == "")
+                if (txtTitulo.Text == "" || txtDefCompleto.Text == "" || txtDefCompleto.Text == "Inserte la definición" || txtTitulo.Text == "Inserte el título")
                 {
                     MessageBox.Show("Debes de llenar los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
@@ -33,14 +33,16 @@ namespace Ejercicio_1_Guía_7
                     //Para instancear el objeto
                     Definición Concepto = new Definición()
                     {
-                        Definicion = txtConcepto.Text
+                        Definicion = txtTitulo.Text,
+                        ConceptoCompleto = txtDefCompleto.Text
                     };
 
                     //Agregandolo al mapa
                     datos.Add(Concepto.Definicion, Concepto);
                     //Agregando los datos al listBox
-                    lstBox.Items.Add(Concepto.Definicion);
-                    txtConcepto.Clear();
+                    lstBox.Items.Add(Concepto.Definicion + " " + Concepto.ConceptoCompleto);
+                    txtTitulo.Clear();
+                    txtDefCompleto.Clear();
                     btnAgregar.Focus();
                 }
             }
@@ -75,6 +77,7 @@ namespace Ejercicio_1_Guía_7
                 string conceptoSeccionado = lstBox.SelectedItem.ToString();
                 datos.Remove(conceptoSeccionado);
                 lstBox.Items.Remove(conceptoSeccionado);
+                
             }
             else
             {
@@ -87,15 +90,48 @@ namespace Ejercicio_1_Guía_7
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string valorEncontrado;
+            
+            string DatoBuscar = txtTitulo.Text;
 
-            if (lstBox.Items.Contains(txtConcepto.Text))
+            if(lstBox.Contains(txtTitulo))
             {
-                valorEncontrado = lstBox.FindString(txtConcepto.Text).ToString();
-                MessageBox.Show("La definición que busca es:" + valorEncontrado);
-
+                MessageBox.Show("La definción completa es");
             }
 
+            MessageBox.Show("La definición completa es:", datos[datos.ContainsValue(Menu)] + "");
+
+        }
+
+        private void txtConcepto_Enter(object sender, EventArgs e)
+        {
+            if(txtTitulo.Text == "Inserte el título")
+            {
+                txtTitulo.Text = "";
+            }
+        }
+
+        private void txtConcepto_Leave(object sender, EventArgs e)
+        {
+            if(txtTitulo.Text == "")
+            {
+                txtTitulo.Text = "Inserte el título";
+            }
+        }
+
+        private void txtDefCompleto_Enter(object sender, EventArgs e)
+        {
+            if(txtDefCompleto.Text == "Inserte la definición")
+            {
+                txtDefCompleto.Text = "";
+            }
+        }
+
+        private void txtDefCompleto_Leave(object sender, EventArgs e)
+        {
+            if(txtDefCompleto.Text == "")
+            {
+                txtDefCompleto.Text = "Inserte la definición";
+            }
         }
     }
 }

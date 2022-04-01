@@ -32,7 +32,7 @@ namespace Ejercicio_1_Guía_7
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtConcepto = new System.Windows.Forms.TextBox();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -40,6 +40,7 @@ namespace Ejercicio_1_Guía_7
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.txtDefCompleto = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -47,9 +48,10 @@ namespace Ejercicio_1_Guía_7
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtDefCompleto);
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Controls.Add(this.txtConcepto);
+            this.groupBox1.Controls.Add(this.txtTitulo);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(41, 110);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -81,20 +83,23 @@ namespace Ejercicio_1_Guía_7
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // txtConcepto
+            // txtTitulo
             // 
-            this.txtConcepto.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConcepto.Location = new System.Drawing.Point(27, 67);
-            this.txtConcepto.Multiline = true;
-            this.txtConcepto.Name = "txtConcepto";
-            this.txtConcepto.Size = new System.Drawing.Size(345, 75);
-            this.txtConcepto.TabIndex = 1;
+            this.txtTitulo.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo.Location = new System.Drawing.Point(108, 47);
+            this.txtTitulo.Multiline = true;
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(182, 32);
+            this.txtTitulo.TabIndex = 1;
+            this.txtTitulo.Text = "Inserte el título";
+            this.txtTitulo.Enter += new System.EventHandler(this.txtConcepto_Enter);
+            this.txtTitulo.Leave += new System.EventHandler(this.txtConcepto_Leave);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(125, 33);
+            this.label2.Location = new System.Drawing.Point(125, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(149, 23);
             this.label2.TabIndex = 0;
@@ -166,6 +171,18 @@ namespace Ejercicio_1_Guía_7
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // txtDefCompleto
+            // 
+            this.txtDefCompleto.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDefCompleto.Location = new System.Drawing.Point(108, 97);
+            this.txtDefCompleto.Multiline = true;
+            this.txtDefCompleto.Name = "txtDefCompleto";
+            this.txtDefCompleto.Size = new System.Drawing.Size(182, 32);
+            this.txtDefCompleto.TabIndex = 5;
+            this.txtDefCompleto.Text = "Inserte la definición";
+            this.txtDefCompleto.Enter += new System.EventHandler(this.txtDefCompleto_Enter);
+            this.txtDefCompleto.Leave += new System.EventHandler(this.txtDefCompleto_Leave);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 26F);
@@ -192,7 +209,7 @@ namespace Ejercicio_1_Guía_7
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtConcepto;
+        private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
@@ -202,6 +219,7 @@ namespace Ejercicio_1_Guía_7
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.TextBox txtDefCompleto;
     }
 }
 

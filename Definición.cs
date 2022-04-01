@@ -9,5 +9,8 @@ namespace Ejercicio_1_Guía_7
     class Definición
     {
         public string Definicion { get; set; }
+
+        public string ConceptoCompleto { get; set; }
+
     }
 }
