@@ -96,6 +96,7 @@ namespace Ejercicio_1_Guía_7
             if(lstBox.Contains(txtTitulo))
             {
                 MessageBox.Show("La definción completa es");
+
             }
 
             MessageBox.Show("La definición completa es:", datos[datos.ContainsValue(Menu)] + "");
